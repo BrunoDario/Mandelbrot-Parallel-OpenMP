@@ -5,8 +5,7 @@
 *.obj
 
 # Ignore heavy images generated
-output/
-*.ppm
+output/*.ppm
 
 # Ignore hidden folder of VSCode (.vscode)
 .vscode/
