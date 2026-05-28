@@ -1,5 +1,5 @@
 #ifndef MANDELBROT_H
-#define MANDELBROT_
+#define MANDELBROT_H
 
 #include "utils.h"
 
