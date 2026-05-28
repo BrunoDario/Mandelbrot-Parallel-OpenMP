@@ -16,3 +16,5 @@ Thumbs.db
 
 # Ignore "tests" folder
 study/
+
+mandelbrot_openmp
