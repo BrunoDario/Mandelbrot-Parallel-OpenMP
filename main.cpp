@@ -21,7 +21,7 @@ void guardarImagenPPM(const std::string& nombreArchivo, const std::vector<Pixel>
 }
 
 int main() {
-    std::cout << "Iniciando procesamiento secuencial (" << WIDTH << "x" << HEIGHT << ")..." << std::endl;
+    std::cout << "Iniciando procesamiento paralelo (" << WIDTH << "x" << HEIGHT << ")..." << std::endl;
     
     // Almacenamiento de las imágenes en memoria
     std::vector<Pixel> imgOriginal(WIDTH * HEIGHT);

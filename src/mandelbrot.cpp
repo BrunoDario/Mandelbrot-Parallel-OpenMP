@@ -1,9 +1,12 @@
 #include "../include/mandelbrot.h"
+#include <omp.h>
 
 
 // Tarea A: Generación del Conjunto de Mandelbrot
 
 void generarMandelbrot(std::vector<Pixel>& imagen) {
+    //Parallel Baseline from IA: Y Axis parallelization 
+    #pragma omp parallel for
     for (int y = 0; y < HEIGHT; ++y) {
         for (int x = 0; x < WIDTH; ++x) {
             // Mapear las coordenadas del píxel al plano complejo (-2.0 a 1.0, -1.2 a 1.2)

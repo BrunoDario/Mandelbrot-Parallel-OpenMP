@@ -1,4 +1,6 @@
 #include "../include/convolution.h"
+#include <omp.h>
+
 
 // Tarea B: Filtro de Convolución 2D Pesado (Desenfoque Gaussiano 5x5)
 void aplicarFiltroConvolucion(const std::vector<Pixel>& origen, std::vector<Pixel>& destino) {
@@ -12,6 +14,8 @@ void aplicarFiltroConvolucion(const std::vector<Pixel>& origen, std::vector<Pixe
     };
 
     // Recorremos la imagen ignorando los bordes exteriores para el kernel 5x5
+    //Parallel Baseline from IA: Row-based workload distribution
+    #pragma omp parallel for
     for (int y = 2; y < HEIGHT - 2; ++y) {
         for (int x = 2; x < WIDTH - 2; ++x) {
             float sumR = 0, sumG = 0, sumB = 0;
