@@ -1,0 +1,19 @@
+# Ignore C++ compilated files 
+*.out
+*.exe
+*.o
+*.obj
+
+# Ignore heavy images generated
+output/
+*.ppm
+
+# Ignore hidden folder of VSCode (.vscode)
+.vscode/
+
+# Ignore system trash files (just in case)
+.DS_Store
+Thumbs.db
+
+# Ignore "tests" folder
+study/
