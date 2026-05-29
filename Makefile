@@ -3,7 +3,7 @@ TARGET = mandelbrot_openmp
 
 # Compilador y banderas (flags) de optimizacion y OpenMP
 CXX = g++
-CXXFLAGS = -fopenmp -O3 -Wall -fopt-info-vec-all
+CXXFLAGS = -fopenmp -O3 -Wall -fopt-info-vec-optimized
 
 
 # Todos los archivos .cpp que se deben compilar juntos
