@@ -8,6 +8,7 @@
 #include "include/utils.h"
 #include "include/mandelbrot.h"
 #include "include/convolution.h"
+#include "include/histogram.h"
 
 
 
@@ -41,10 +42,26 @@ int main() {
     std::chrono::duration<double> diffB = endB - startB;
     std::cout << "-> Tarea B (Convolucion) completada en: " << diffB.count() << " segundos." << std::endl;
 
+    // Task C: Histogram
+    std::cout<<"\ncalculating Histograms. . ."<< std::endl;
+
+    auto startC = std::chrono::high_resolution_clock::now();
+    calculateHistogramAtomic(imgFiltrada);
+    auto endC = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffC = endC - startC;
+    std::cout<<"-> Histogram (Atomic) completed in: "<< diffC.count() << " seconds."<<std::endl;
+
+    auto startC2 = std::chrono::high_resolution_clock::now();
+    calculateHistogramReduction(imgFiltrada);
+    auto endC2 = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffC2 = endC2 - startC2;
+    std::cout<<"-> Histogram (Reduction) completed in: "<< diffC2.count() << " seconds."<<std::endl;
+
+
     // Guardar los resultados finales en el disco
     guardarImagenPPM("output/mandelbrot_original.ppm", imgOriginal);
     guardarImagenPPM("output/mandelbrot_filtrado.ppm", imgFiltrada);
     
-    std::cout << "¡Proceso terminado! Imagenes guardadas exitosamente." << std::endl;
+    std::cout << "\n\n¡Proceso terminado! Imagenes guardadas exitosamente." << std::endl;
     return 0;
 }

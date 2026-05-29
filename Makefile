@@ -6,7 +6,7 @@ CXX = g++
 CXXFLAGS = -fopenmp -O3 -Wall
 
 # Todos los archivos .cpp que se deben compilar juntos
-SRCS = main.cpp src/mandelbrot.cpp src/convolution.cpp
+SRCS = main.cpp src/mandelbrot.cpp src/convolution.cpp src/histogram.cpp
 
 # Regla principal: construye el programa
 all: $(TARGET)
