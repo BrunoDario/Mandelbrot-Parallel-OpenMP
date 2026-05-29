@@ -20,6 +20,7 @@ void aplicarFiltroConvolucion(const std::vector<Pixel>& origen, std::vector<Pixe
         for (int x = 2; x < WIDTH - 2; ++x) {
             float sumR = 0, sumG = 0, sumB = 0;
 
+            #pragma omp simd collapse(2) reduction(+:sumR, sumG, sumB)
             // Multiplicamos la vecindad de píxeles por el kernel
             for (int ky = -2; ky <= 2; ++ky) {
                 for (int kx = -2; kx <= 2; ++kx) {

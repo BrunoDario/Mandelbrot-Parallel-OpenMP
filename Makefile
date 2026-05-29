@@ -3,7 +3,8 @@ TARGET = mandelbrot_openmp
 
 # Compilador y banderas (flags) de optimizacion y OpenMP
 CXX = g++
-CXXFLAGS = -fopenmp -O3 -Wall
+CXXFLAGS = -fopenmp -O3 -Wall -fopt-info-vec-all
+
 
 # Todos los archivos .cpp que se deben compilar juntos
 SRCS = main.cpp src/mandelbrot.cpp src/convolution.cpp src/histogram.cpp
@@ -17,3 +18,5 @@ $(TARGET): $(SRCS)
 # Regla para limpiar los binarios y volver a empezar
 clean:
 	rm -f $(TARGET)
+
+
